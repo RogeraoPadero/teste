@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Site</title>
+    <!-- Link para fontes do Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffd3e2, #fad0c4);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            color: #ff6f91;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 0 20px;
+            color: #555;
+        }
+
+        /* Timer */
+        .timer {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid #ff6f91;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Container de imagens */
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .image-container img {
+            width: 280px;
+            height: auto;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Botão Spotify */
+        .spotify-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #ff6f91;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background-color 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .spotify-button:hover {
+            background-color: #ff5675;
+            transform: scale(1.05);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .image-container img {
+                width: 90%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+    <script>
+        function calculateTimeTogether() {
+            const startDate = new Date("2024-11-02T00:00:00");
+            const now = new Date();
+            const diff = now - startDate;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").textContent = 
+                `${years} anos, ${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+        }
+
+        setInterval(calculateTimeTogether, 1000);
+    </script>
+</head>
+<body>
+    <h1>Nossa História</h1>
+    <p>
+        Em 2022 foi a primeira vez que tentei algo com você e, para minha surpresa, você não quis por causa da Sophia.  
+        Depois disso, eu acabei esquecendo e já tinha colocado na cabeça que você não tinha interesse em mim.  
+        Desisti disso, até que em 2024 você decidiu tomar a iniciativa. Finalmente, depois de 2 anos, nós ficamos.  
+        Mesmo assim, continuamos como se nada tivesse acontecido, até que passamos um sábado inteiro juntos e percebemos que talvez desse certo.  
+
+        E realmente deu! Você reacendeu uma chama dentro de mim que eu achava que estava apagada. A partir daquele momento, começamos a construir algo especial, algo nosso. Cada dia ao seu lado é uma nova aventura, uma nova razão para sorrir e acreditar que o amor pode ser simples e grandioso ao mesmo tempo. Obrigado por acreditar em nós. O que vivemos é só o começo de uma história que eu quero que dure para sempre. 💖
+    </p>
+    
+    <div class="image-container">
+        <img src="WhatsApp Image 2024-11-23 at 00.43.58.jpeg" alt="Foto 1">
+        <img src="WhatsApp Image 2024-11-23 at 11.15.48.jpeg" alt="Foto 2">
+        <img src="WhatsApp Image 2024-11-23 at 00.43.59.jpeg" alt="Foto 3">
+    </div>
+
+    <div class="timer-container">
+        <p class="timer" id="timer">Calculando o tempo juntos...</p>
+    </div>
+    
+    <a class="spotify-button" href="https://open.spotify.com/intl-pt/track/0DZy6nJdqvHSeobBaOBJI6" target="_blank" rel="noopener noreferrer">
+       Te dedico essa, amor!
+    </a>
+</body>
+</html>
